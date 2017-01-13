@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Samuel D. Leventhal</title>
+<meta name="Description" content="An assembly of Sam Leventhal's studies, writings, and art along with a history of experiences, contributions, and affiliations.">
+
+
+  <link href='http://fonts.googleapis.com/css?family=Habibi' rel="stylesheet" type="text/css">
+ <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <script>
+  $(function() {
+$("#accordion").accordion({ header: "h3", collapsible: true, active: false, heightStyle: "content" });
+  });
+  </script>
+  <script>
+  function getMouse(e) {
+    mx = e.clientX - canvas.offsetLeft;
+    my = e.clientY - canvas.offsetTop;
+  }
+
+  function draw(mouseX) {
+
+    // fixes offset caused by event.clientX and the canvas element
+    // having different origins for their coordinate systems:
+    var xCoord = mouseX - canvas.getBoundingClientRect().left;
+
+    ctx.beginPath();
+    ctx.strokeStyle = "black";
+    ctx.lineWidth = 1;
+    ctx.moveTo(xCoord, 0);
+    ctx.lineTo(xCoord, canvas.height);
+    ctx.stroke();
+    ctx.closePath();
+  }
+  
+  </script>
+  <script>
+    /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function dropFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+		    </script>
+  
+<style type="text/css">
+#accordion{
+margin: 0 auto;
+border:0px;
+outline:none;
+}
+#accordion .ui-state-active {
+outline: none;
+    padding: 0 !important;
+    border-style: none;
+    background-color: transparent;
+    background-image: none;
+}
+#accordion .ui.accordion-icons {outline:none;}
+#accordion .ui-accordion-content{
+padding: 0px;
+height:auto;
+margin:0 auto;
+width:100%;
+font-size:12pt;
+outline:none;
+
+    padding: 0 !important;
+    border-style: none;
+    background-color: transparent;
+    background-image: none;
+}
+.ui-accordion-content-active
+{
+    padding: 0 !important;
+    border-style: none;
+    background-color: transparent;
+    background-image: none;
+}
+#accordion .ui-accordion-header{
+width:90%;
+outline:none;
+    padding: 0 !important;
+    border-style: none;
+    background-color: transparent;
+    background-image: none;
+}
+h3{
+outline:none;
+    padding: 0 !important;
+    border-style: none;
+    background-color: transparent;
+    background-image: none;
+}
+
+
+.linkRow{
+width:100%;
+position:relative;
+font-family: 'Habibi', serif;
+max-width: 600px;
+left:0%;
+margin: 0px auto;
+}
+
+
+
+html,body { height:100%;}
+
+
+
+
+div.entry {
+position:relative;
+font-family: 'Habibi', serif;
+height:auto;
+width: 60%;
+margin: 10px auto;
+clear:right;
+border-style:solid;
+background-color:#ffffff;
+opacity:0.8;
+padding:25px;
+border-width:5px;
+border-color:darkgrey;
+left:7%;
+}
+
+#leftBox{
+left:7%;
+height:100%;
+width:20%;
+position:absolute;
+font-size:large;
+max-width:22%;
+margin:0 auto;
+opacity:0.2;
+
+background-color: purple; 
+}
+
+.banner{
+position:relative;
+height:27%;
+max-width:100%;
+background-color: rgba(255, 255, 255, 0.0);
+left:0%;
+margin:10px auto;
+}
+.rightBox{
+position:absolute;
+background-color:white; 
+left: 24%;
+height:100%;
+width:3%;
+}
+.left{
+position:relative;
+background-color: rgba(255, 255, 255, 0.0); 
+left:60%;
+top:15%;
+height:100%
+
+}
+.logo{
+background-image:url('webLogo2.jpg');
+position:absolute;
+height:100%;
+width:100%;
+left:0px;
+top:0px;
+background-repeat:no-repeat;
+}
+
+<!-- Drop down button -->
+ /* Dropdown Button */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 100%;
+    overflow:auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.9);
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .show {display:block;}
+  
+</style>
+
+
+    <script src="assets/js/json-sans-eval.js"></script>
+    <script src="assets/js/css-browser-selector.js"></script>
+    <script src="assets/js/game-of-life-v3.1.1.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+
+    <!-- GitHub Button -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    
+  </head>
+
+<body>
+
+
+
+  <div class="banner" style="font-size:200%" >
+    <div class="logo" style="top:0%"></div>
+    <div class="banner" style="left:24%; top:13%">
+      Samuel Leventhal
+      
+    <div style="font-size:50%; line-height:8%">   
+      <div id="accordion">
+	<h3 style="outline:grey; border:1px;font-size:12pt; background-color:transperent">
+	    Contact
+	  
+	  </h3>
+	<div>
+	  <p>samlev (at) cs (dot) utah (dot) edu</p>
+	  <!-- Place this tag where you want the button to render. -->
+<a aria-label="Follow @sam-lev on GitHub" href="https://github.com/sam-lev" class="github-button">GitHub</a>
+	  <p>+1.801.808.6428</p>
+      </div>
+	</div>
+      
+      <p><A href="http://www.cs.utah.edu/~samlev/CV.pdf" style="width:30px;"><b>CV </b></A></p>
+    </div>
+    </div>
+  </div>
+
+
+
+ <div id="leftBox" > 
+
+<!-- start of Conways Game of Life code by Tony Finch under MIT license-->
+      <canvas id="canvas" style="width:84%;position:relative;height:auto;min-height:100%;" ></canvas>
+
+   <!--hide unwanted forms-->
+      <div class="box"  style="bottom:0px;visibility:hidden;">
+
+        <p class="info"><abbr title="Current Generation"></abbr>: <div id="generation"></div> | <abbr title="Number of live cells">Live cells</abbr>: <div id="livecells"></div> | <abbr title="Execution times: Algorithm / Canvas (Algorithm / Canvas Averages)"></abbr>: <div id="steptime"></div> ms </p>
+	          <div value="Export" id="buttonExport"></div>
+	 <div id="hint"></div>
+
+	 
+	 <div class="box layout">
+           <form>
+             <input type="button" id="buttonTrail" value="Trail"/>
+             <input type="button" id="buttonGrid" value="Grid" />
+             <input type="button" id="buttonColors" value="Colors" />
+             <div id="layoutMessages"></div>
+           </form>
+	 </div>
+      </div>
+<!--end hidden-->
+
+
+
+ </div><!--leftbox close -->
+
+      <div style="top:90%;left:7%;position:fixed;max-height:90%">
+	<div class="subtitle"> Controls</div>
+        <form action="">
+	  <input type="button" value="Run" id="buttonRun" title="Key: R" />
+          <input type="button" value="Step" id="buttonStep" title="Key: S" />
+          <input type="button" value="Clear" id="buttonClear" title="Key: C" />
+	</form>
+
+</div>
+<!--end of conways code -->
+
+   <div class="rightBox"></div>
+
+  <div class="linkRow"> 
+<!-- none for now -->
+ </div>
+
+
+  <div class="entry">
+    <b> <p>
+      About
+    </p></b>
+    <p>
+I am a Ph.D. fellow studying computer science at the University of Utah as a member of the <A href = "http://datagroup.cs.utah.edu/"> Data Group</A>. I appreciate a cross disciplinary approach to computational problems stemming from my <A href = "http://cs.utah.edu/~samlev/CV.pdf"> undergraduate career</A>. My focus is theory and innovative algorithm design for large scale, high dimensional, and graph data from the perspective of data mining and machine learning in the context of deep learning, geometric computing, and algorithmic topology. Broadly, my personal work aims to develop and apply frontier computational techniques which in the growing world of data can be seen as the currency of modern sciences.  
+   </p>
+  <p> Other interests include the theoretical foundation and capabilities of quantum computing from a categorical or functional perspective.</p>
+
+</div>
+  
+	<div  class="entry">
+	 <b> <p>
+	    Research
+	  </p></b>
+    <p> I have had the fortune of working with <A href="https://faculty.utah.edu/u0458548-STEPHAN_LOUIS_LE_BOHEC/research/index.hml">Stephan LeBohec</A> on a rederivation of the quantum postulates using scale relativity as well as a search for quantum like structuring in celestial systems, <A href="http://www.cs.utah.edu/~jeffp/">Jeff Phillips</A> in constructing an effecient geometric algorithm used for determining the extent of multi-dimensional data sets under the strict turnstile model, <A href="www.monoidal.net">Benoit Valiron</A> in extending the functional programming language Quipper to include callcc, and <A href="http://www.sci.utah.edu/~beiwang/">Bei Wang</A> developing a topologicaly based quality assesment for dimension reduction of high dimensional data  . </p>
+<p><b>Abstracts</b></p>
+	  
+
+<!-- <div id="accordion">
+<h3 style="ouline:none; border:0px;font-size:12pt;">
+
+  -->
+
+	<div style="ouline:none; border:0px;font-size:12pt;"><b>
+	    (.) Topological Distortion From Dimension Reduction
+	</b></div>
+	<p>Bei Wang and I tackle the problem of reducing high dimensional data such that information loss is
+minimized by preserving similarity between persistence diagrams between high dimensional data and its projected equivilent following principle component analysis. We
+are then able to project large scale data along the sub-planes which preserve the
+structure of first degree homological features. Using topological measures such as bottleneck and
+p-Wasserstein distances we can then identify optimal projection of high
+dimensional data which preserve general topological structures.
+	  <a href="https://github.com/sam-lev/topologicaldistortionofdimensionreduction">https://github.com/sam-lev/topologicaldistortionofdimensionreduction</a></p>
+
+
+	 <div style="ouline:none; border:0px;font-size:12pt;"><b>
+(.) A Deterministic Sketch for Geometric Extents. Authors Sam Leventhal and Jeff M. Phillips.
+  </b></div>
+	 <p>
+We consider a point set P in a d-dimensional space of size u. Our goal is to contuct a sketch of order log(u) which can approximate the extents of P along any direction. The algorithm presented amounts to a turnstile model where elements of P are associated to an array of counters. The array of counters takes the form of a square lattice defined by a modular relation dependent on length with each counter associated to an equivilence class. The approximate extent in our query direction is found by continually reducing the length up to some minimum resolution parameter.
+	 </p>
+
+
+<div style="ouline:none; border:0px;font-size:12pt;"><b>(.) Search For Quantum Like Structuring In Keplerian Systems. Authors: Sam Leventhal, Stephan LeBohec.</b></div>
+<!-- </h3>
+<div >
+
+  -->
+
+ <p>   Various approaches have bee used with some success and some limitations to provide mathematical derivations of the axioms of quantum mechanics (QM) which otherwise are only justified by the predictive power they provide. All of these approaches involve stochastic mechanics with brownian like trajectories. One such approach is known as the theory of Scale Relativity (SR). In the development of SR, it was suggested that quantum like behavior may appear on macroscopic scales in chaotic systems. Here we engage in a search for signatures of SR and quantum like structure that maybe expected to arrise during the formation of some systems.  Indeed, SR suggests that for example, solar systems may form along probability distributions predicted by the square magnitude of the Schrodinger-Keplerian wave equation.</p>
+
+	 <p> In search for some SR signature, we use our own solar system as a reference to establish a scaling parameter used to define orbital ranks to be assimilated to the principal quantum number. Similar to the principle quantum number for electron orbitals, the orbital rank of celestial bodies correlates to the probability distribution described by the Schrodinger-Keplerian equation. This scaling parameter is then used with extrasolar planets to see if their orbital configuration tend to fall near integer orbital ranks.</p>
+	 <p> For an analysis through spectral graphs and set similarity:<a href = "https://github.com/sam-
+lev/SpectralGraphSetSimilarityAnalysisForQuantumStructuringInKeplerianSystems"> https://github.com/sam-
+lev/SpectralGraphSetSimilarityAnalysisForQuantumStructuringInKeplerianSystems</a></p>
+   <p>Presentation on research given at UROP: <a href="./sr.pdf">Search for Quantum Like Structuring in Keplerian Systems</a> </p>
+
+
+   
+</div>
+	
+	
+<div class="entry">
+  <p><b> Recent Projects</b></p>
+  
+<div style="ouline:none; border:0px;font-size:12pt;"><b>
+  (.) Stochastic Nondeterministic Automaton and Applications
+  </b></div>
+    <p>
+      <a href="./Project_Report.pdf">Literature Replicator with Markov Chains</a>
+
+
+<p>Given a file the program will record word frequencies to generate text files in a similar voice to that of the input file using Markov chains. The code is written in C#. <a href = "https://github.com/sam-lev/MarkovChainBasedFileReplicator">https://github.com/sam-lev/MarkovChainBasedFileReplicator</a></p>
+    </p>
+    <div style="ouline:none; border:0px;font-size:12pt;"><b>
+	(.) Protein Family Classification
+	</b></div>
+    <p>A classifier trains to label proteins by family in two manners: First, supervised
+learning with a support vector machine and decision trees given amino acid
+chains labeled by protein family. Secondly, supervised learning for a
+convolutional neural net (CNN) with example inputs as snapshot images taken
+from 3D model renderings of proteins labeled by family. The CNN then labels
+proteins of an undefined family given image renderings of the protein.</p>
+<p><a href="https://github.com/sam-
+lev/ConvolutionalNueralNetFor3DProteinRenderings">https://github.com/sam-
+lev/ConvolutionalNueralNetFor3DProteinRenderings</a></p>
+    
+</div>
+
+   <div class="entry">
+    <b> <p>Other Interests</p></b>
+ 
+    <p>
+      <div style="ouline:none; border:0px;font-size:12pt;"><b>
+  (.) </b>Collection of <A href="http://cityofsalt.tumblr.com">random drawings</A>.</div>
+    <div style="ouline:none; border:0px;font-size:12pt;"><b>
+	(.) </b> Collection of <A href="https://sdleventhal.wordpress.com/"> random writings</A>.</div>
+    </p>
+    
+   </div>
+
+
+</body>
+</html>
